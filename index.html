@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Primes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Enter a number, and I will give you all of the prime numbers less than your number.</h1>
+      </div>
+      <form id="number-submit">
+        <div class="form-group">
+          <label for="number">Enter a number:</label>
+          <input id="number" class="form-control">
+        </div>
+        <button class="btn" type="submit">Submit</button>
+      </form>
+      <p></p>
+      <div class="well output">
+        <h3>All of the prime numbers less than <span id="input"> are:</h3>
+          <ul id="prime-output">
+          </ul>
+      </div>
+    </div>
+  </body>
+</html>
