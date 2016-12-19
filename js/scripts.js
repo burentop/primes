@@ -20,13 +20,24 @@ var removeMultiples = function(array) {
       array.splice(index, 1);
     }
   }
+  primes.push(array.shift());
 }
 
-var getPrimes = function(number) {
+var getInitialList = function(number) {
   for (var index = 2; index < number; index += 1) {
     allNums.push(index);
   }
+  return;
+}
 
+var runSieve = function(array) {
+  while (array.length > 0) {
+    if (isPrime(array[0])) {
+      removeMultiples(array);
+    } else {
+      array.shift();
+    }
+  }
 }
 
 $(document).ready(function() {
@@ -34,9 +45,9 @@ $(document).ready(function() {
     event.preventDefault();
     var input = parseInt($("#number").val());
     $("#input").text(input);
-    getPrimes(input);
-    removeMultiples(allNums);
-    console.log(allNums);
+    getInitialList(input);
+    runSieve(allNums);
+    console.log(primes);
     $(".output").show();
   })
 })
