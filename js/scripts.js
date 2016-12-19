@@ -47,7 +47,9 @@ $(document).ready(function() {
     $("#input").text(input);
     getInitialList(input);
     runSieve(allNums);
-    console.log(primes);
+    primes.forEach(function(prime) {
+      $("#prime-output").append("<li>" + prime + "</li>");
+    });
     $(".output").show();
-  })
-})
+  });
+});
